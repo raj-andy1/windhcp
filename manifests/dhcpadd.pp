@@ -2,18 +2,17 @@
 # Sample Puppet code to demonstrate setting up a DHCP server via DSC
 
 class windhcp::dhcpadd (
+  $windowsfeaturenm = ['DHCP','RSAT-DHCP'],
   )
+
 {
-#install DHCP Server feature
-    dsc_windowsfeature { 'DHCP':
-      ensure   =>  present,
-      dsc_name => 'DHCP',
-    } ->
-#install DHCP Server Remote Server Administration
-    dsc_windowsfeature { 'RSAT-DHCP':
-      ensure   =>  present,
-      dsc_name => 'RSAT-DHCP',
-    } ->
+  $windowsfeaturenm.each | $dsc_resource {
+    dsc_windowsfeature { $dsc_resource:
+      ensure  => present,
+      dsc_name => $dsc_resource,
+
+    }
+  } ->
 
 # Add DHCP Security groups
     exec {'set-dhcp-securitygroups':
