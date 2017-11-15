@@ -1,5 +1,5 @@
 # /etc/puppetlabs/code/environments/production/site/windhcp/manifests/dhcpint.pp
-# Sample Puppet code to disable DHCP for an interface on a Windows machine
+# Puppet code to disable DHCP Addressing for all interfaces on a machine. 
 
 class windhcp::dhcpint {
   $::interface_guids.each | $key, $value| {
