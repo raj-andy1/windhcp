@@ -1,0 +1,18 @@
+{
+  "name": "rajandy1/windhcp",
+  "version": "0.1.0",
+  "author": "rajandy1",
+  "summary": "Manage DHCP Service running on Windows",
+  "license": "Apache-2.0",
+  "source": "https://github.com/raj-andy1/windhcp",
+  "project_page": "https://github.com/raj-andy1/windhcp",
+  "issues_url": "https://github.com/raj-andy1/windhcp/issues",
+  "dependencies": [
+    {
+      "name": "puppetlabs-stdlib",
+      "version_requirement": ">= 1.0.0"
+    }
+  ],
+  "data_provider": null
+}
+
