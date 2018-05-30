@@ -26,8 +26,8 @@ class windhcp::dhcpadd (
 # Add sample DHCP Scope
     dsc_xDhcpServerScope { 'samplescope':
       ensure => present,
-      dsc_ipendrange => '172.16.1.254',
-      dsc_ipstartrange => '172.16.1.1',
+      dsc_ipendrange => '10.1.1.254',
+      dsc_ipstartrange => '10.1.1.1',
       dsc_subnetmask => '255.255.255.0',
       dsc_leaseduration => '00:08:00',
       dsc_state => 'active',
