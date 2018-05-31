@@ -6,7 +6,7 @@ class windhcp::dhcpadd (
   )
 
 {
-  $windowsfeaturenm.each | $dsc_resource {
+  $windowsfeaturenm.each | $dsc_resource | {
     dsc_windowsfeature { $dsc_resource:
       ensure  => present,
       dsc_name => $dsc_resource,

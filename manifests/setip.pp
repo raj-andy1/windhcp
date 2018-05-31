@@ -12,4 +12,5 @@ exec {'set-staticip-for-interface':
   command => 'C:\windows\system32\netsh.exe interface ip set address $net_int_nm static $net_int_ipaddr $net_int_ipmask $net_int_ipgw',
   #onlyif => ,
 
+  }
 }
