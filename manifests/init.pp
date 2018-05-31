@@ -7,5 +7,5 @@ class windhcp
   include windhcp::dhcpint
   include windhcp::setip
 
-  Class ['windhcp::dhcpint'] -> Class ['windhcp::setip'] -> Class ['windhcp::dhcpadd']
+  Class['windhcp::dhcpint'] -> Class['windhcp::setip'] -> Class['windhcp::dhcpadd']
 }
