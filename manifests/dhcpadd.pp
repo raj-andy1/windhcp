@@ -10,9 +10,9 @@ class windhcp::dhcpadd (
     dsc_windowsfeature { $dsc_resource:
       ensure  => present,
       dsc_name => $dsc_resource,
-
+      before => Exec['set-dhcp-securitygroups'],
     }
-  } ->
+  }
 
 # Add DHCP Security groups
     exec {'set-dhcp-securitygroups':
