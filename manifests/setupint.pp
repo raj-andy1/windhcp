@@ -2,9 +2,8 @@
 # Sample Puppet code to configure the interfaces on the dhcp server
 
 class windhcp::setupint ()
-
+{
 $::interfaces.each | $dsc_resource| {
-  {
   dsc_xdhcpclient { $dsc_resource:
   ensure => present,
   dsc_state => 'Disabled',
