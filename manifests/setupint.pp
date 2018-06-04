@@ -7,7 +7,7 @@ $facts['networking']['interfaces'].keys.each | $int_name| {
   dsc_xdhcpclient { $int_name:
   ensure => present,
   dsc_state => 'Disabled',
-  dsc_interfacealias => $inst_name,
+  dsc_interfacealias => $int_name,
   }
   }
   }
