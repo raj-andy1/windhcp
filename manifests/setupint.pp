@@ -3,11 +3,11 @@
 
 class windhcp::setupint ()
 {
-$::interfaces.each | $dsc_resource| {
-  dsc_xdhcpclient { $dsc_resource:
+$facts['networking']['interfaces'].keys.each | $int_name| {
+  dsc_xdhcpclient { $int_name:
   ensure => present,
   dsc_state => 'Disabled',
-  dsc_interfacealias => $dsc_resource,
+  dsc_interfacealias => $inst_name,
   }
   }
   }
