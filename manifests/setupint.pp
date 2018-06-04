@@ -8,6 +8,7 @@ $facts['networking']['interfaces'].keys.each | $int_name| {
   ensure => present,
   dsc_state => 'Disabled',
   dsc_interfacealias => $int_name,
+  dsc_addressfamily => 'IPv4',
   }
   }
   }
